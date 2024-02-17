@@ -1,0 +1,97 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html
+        lang="es"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head th:fragment>
+    <meta charset="UTF-8" />
+    <title>ReparApp · Modificar Oferta</title>
+    <!-- CSS only -->
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+<section id="home" class="hero-section">
+    <div
+            class="hero-section hero-style img-bg vh-100"
+            style="background-image: url('/img/hero-bg.svg')"
+    >
+
+        <div
+                th:if="${error != null}"
+                class="card text-white bg-danger mb-3 mensajeError"
+        >
+            <div class="card-body">
+                <h5 class="card-title">Error 👎</h5>
+                <p class="card-text" th:text="${error}"></p>
+            </div>
+        </div>
+        <div
+                th:if="${exito != null}"
+                class="card text-white bg-success mb-3 mt-3 mensajeExito"
+        >
+            <div class="card-body">
+                <h5 class="card-title">Exito!</h5>
+                <p class="card-text" th:text="${exito}"></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <div class="card border-0 p-4 card-login mb-2">
+
+                        <h3 class="text-center fw-bold text-center pb-4">Modificar Oferta</h3>
+                        <form
+                                class="formulario"
+                                th:action="@{/oferta/modificado/__${oferta.id}__}"
+                                method="POST"
+                                enctype="multipart/form-data"
+                        >
+                            <input hidden th:value="${id}" name="id" />
+
+                            <input hidden th:value="${oferta.servicio.id}" name="idServicio" />
+                            <label th:text="'Profesional '+${oferta.servicio.proveedor.nombre}" class="mb-3"></label>
+
+                            <label th:text="'Cliente: '+${oferta.cliente.nombre}" class=""></label>
+                            <input hidden th:value="${oferta.cliente.id}" name="idCliente" />
+                            <div class="form-group my-3">
+                                <label class="">Mensaje de la Oferta:</label>
+                                <textarea
+                                        class="form-control"
+                                        th:value="${oferta.descripcion}"
+                                        th:text="${oferta.descripcion}"
+                                        name="descripcion"
+                                        placeholder="Mensaje del cliente.."
+                                ></textarea>
+                            </div>
+
+                            <div class="text-center mt-5">
+                                <button type="submit" class="btn btn-primary mt-3 botones">
+                                    Actualizar
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <script
+                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+                    crossorigin="anonymous"
+            ></script>
+</body>
+</html>

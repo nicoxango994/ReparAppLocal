@@ -1,0 +1,126 @@
+<nav class="navbar navbar-expand-lg pt-3 pb-5">
+    <a class="navbar-brand" href="/">
+        <img src="/img/logo2.png" alt="Logo" />
+    </a>
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent6"
+        aria-controls="navbarSupportedContent6"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        >
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+        <span class="toggler-icon"></span>
+    </button>
+
+    <div
+        class="collapse navbar-collapse sub-menu-bar"
+        id="navbarSupportedContent6"        
+        >
+        <ul id="nav6" class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="page-scroll active" th:href="@{/}">Home</a>
+            </li>
+            <li class="nav-item" th:unless="${session.usuarioSession != null and session.usuarioSession.rol.name == 'ADMIN'}">
+                <a class="page-scroll" href="/#nosotros">Nosotros</a>
+            </li>
+
+            <li th:if="${session.usuarioSession == null}" class="nav-item">
+                <a class="page-scroll" href="/servicio/listar">Servicios</a>
+            </li>
+            <li th:if="${session.usuarioSession != null}" sec:authorize="hasRole('CLIENTE')" class="nav-item">
+                <a class="page-scroll" href="/servicio/listar/cliente">Servicios</a>
+            </li>
+            <li th:if="${session.usuarioSession != null}" sec:authorize="hasRole('PROVEEDOR')" class="nav-item">
+                <a class="page-scroll" href="/servicio/listar/proveedor">Servicios</a>
+            </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" 
+                   th:if="${session.usuarioSession == null}" 
+                   href="#" id="navbarDropdown" role="button" 
+                   data-bs-toggle="dropdown" 
+                   aria-expanded="false">
+
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" 
+                           th:href="@{/login}" >
+                            Iniciar Sesion</a></li>
+                    <li><a class="dropdown-item" 
+                           th:href="@{/registrar}" >
+                            Registrar</a></li>     
+                </ul>
+            </li> 
+
+            <li class="dropdown nav-item ">
+                <a class="nav-link dropdown-toggle" 
+                   th:if="${session.usuarioSession != null}" 
+                   href="#" id="navbarDropdown" 
+                   role="button" 
+                   data-bs-toggle="dropdown" 
+                   aria-expanded="false">                             
+                    <img class="logo"                                          
+                         th:src="@{/imagen/usuario/__${session.usuarioSession.id}__}"
+                         alt="imagen de perfil"
+                         />                  
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" 
+                           sec:authorize="hasRole('CLIENTE')" th:href="@{/usuario/restablecer}" >
+                            Usuario</a></li>
+                    <li><a class="dropdown-item" 
+                           sec:authorize="hasRole('PROVEEDOR')"  th:href="@{/usuario/restablecer}" >
+                            Usuario</a></li>
+
+
+                    <li><a class="dropdown-item" 
+                           sec:authorize="hasRole('PROVEEDOR')" th:href="@{/servicio/listar/proveedor}" >
+                            Servicios</a></li>
+                    <li><a class="dropdown-item" 
+                           sec:authorize="hasRole('PROVEEDOR')" th:href="@{/servicio/registrar}" >
+                            Agregar Servicio</a></li>
+
+                    <li><a class="dropdown-item"
+                           sec:authorize="hasRole('PROVEEDOR')" th:href="@{/contrato/listar}" >
+                            Contratos</a></li>
+
+
+                    <li><a class="dropdown-item"
+                           sec:authorize="hasRole('CLIENTE')" th:href="@{/servicio/listar/cliente}" >
+                            Servicios</a></li>
+                    <li><a class="dropdown-item" 
+                           sec:authorize="hasRole('CLIENTE')" th:href="@{/contrato/listar}" >
+                            Ofertas</a></li>
+
+                    <li><a class="dropdown-item"
+                           sec:authorize="hasRole('ADMIN')" th:href="@{/categoria/registrar}" >
+                            Agregar Categoria</a></li>
+                    <li><a class="dropdown-item"
+                           sec:authorize="hasRole('ADMIN')" th:href="@{/categoria/listar}" >
+                            Categorias</a></li>
+
+                    <li><a class="dropdown-item" 
+                           href="/logout" >
+                            Cerrar Sesión
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li  class="nav-item dropdown">
+                <a class="page-scroll" th:href="@{/contrato/listar}" th:if="${session.usuarioSession != null and session.usuarioSession.rol.name != 'ADMIN'}">
+                    <i class="fa-solid fa-bell"></i>
+                    <span th:if="${notificaciones != null and notificaciones > 0}" style="background-color: red; color: white; border-radius: 50%; padding: 5px 13px;" th:text="${notificaciones}"></span>
+                </a>  
+            </li>
+
+        </ul>
+    </div>
+
+</nav>

@@ -1,0 +1,351 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>servicio</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+		/>
+		<link rel="stylesheet" href="../static/css/style.css" />
+	</head>
+	<body>
+		<section id="home" class="hero-section">
+			<!--header -->
+			<header class="header">
+				<div class="navbar-area sticky"><!-- sticky prueba barra fijada  -->
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-lg-12">
+								<!-- navbar -->
+								<nav class="navbar navbar-expand-lg pt-3">
+									<a class="navbar-brand" href="test_index.html">
+										<img src="../static/img/logo2.png" alt="Logo" />
+									</a>
+									<button
+										class="navbar-toggler"
+										type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#navbarSupportedContent6"
+										aria-controls="navbarSupportedContent6"
+										aria-expanded="false"
+										aria-label="Toggle navigation"
+									>
+										<span class="toggler-icon"></span>
+										<span class="toggler-icon"></span>
+										<span class="toggler-icon"></span>
+									</button>
+
+									<div
+										class="collapse navbar-collapse sub-menu-bar"
+										id="navbarSupportedContent6"
+									>
+										<ul id="nav6" class="navbar-nav ms-auto">
+											<li class="nav-item">
+												<a class="page-scroll active" href="test_index.html">Home</a>
+											</li>
+											<li class="nav-item">
+												<a class="page-scroll" href="#">Nosotros</a>
+											</li>
+											<li class="nav-item">
+												<a class="page-scroll" href="#servicios">Servicios</a>
+											</li>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+            />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+            />
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <section id="home" class="hero-section">
+            <!--header -->
+            <header class="header">
+                <div class="navbar-area sticky"><!-- sticky prueba barra fijada  -->
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-12">
+                                <!-- navbar -->
+                                <nav class="navbar navbar-expand-lg pt-3">
+                                    <a class="navbar-brand" href="index.html">
+                                        <img src="/img/logo2.png" alt="Logo" />
+                                    </a>
+                                    <button
+                                        class="navbar-toggler"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarSupportedContent6"
+                                        aria-controls="navbarSupportedContent6"
+                                        aria-expanded="false"
+                                        aria-label="Toggle navigation"
+                                        >
+                                        <span class="toggler-icon"></span>
+                                        <span class="toggler-icon"></span>
+                                        <span class="toggler-icon"></span>
+                                    </button>
+
+                                   <div
+                                        class="collapse navbar-collapse sub-menu-bar"
+                                        id="navbarSupportedContent6"
+                                        >
+                                        <ul id="nav6" class="navbar-nav ms-auto">
+                                            <li class="nav-item">
+                                                <a class="page-scroll active" th:href="@{/}">Home</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="page-scroll" href="#">Nosotros</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="page-scroll" href="#servicios">Servicios</a>
+                                            </li>
+
+
+
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" 
+                                                   th:if="${session.usuarioSession == null}" 
+                                                   href="#" id="navbarDropdown" role="button" 
+                                                   data-bs-toggle="dropdown" 
+                                                   aria-expanded="false">
+                                                    <i class="fa-solid fa-right-to-bracket"></i>
+                                                </a>
+
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                    <li><a class="dropdown-item" 
+                                                           th:href="@{/login}" >
+                                                            Iniciar Sesion</a></li>
+                                                    <li><a class="dropdown-item" 
+                                                           th:href="@{/registrar}" >
+                                                            Registrar</a></li>     
+                                                </ul>
+                                            </li>
+
+
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" 
+                                                   th:if="${session.usuarioSession != null}" 
+                                                   href="#" id="navbarDropdown" 
+                                                   role="button" 
+                                                   data-bs-toggle="dropdown" 
+                                                   aria-expanded="false">
+                                                    Perfil
+                                                </a>
+
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                    <li><a class="dropdown-item" 
+                                                           sec:authorize="hasRole('CLIENTE')" th:href="@{/usuario/restablecer}" >
+                                                            Usuario</a></li>
+                                                    <li><a class="dropdown-item" 
+                                                           sec:authorize="hasRole('PROVEEDOR')"  th:href="@{/usuario/restablecer}" >
+                                                            Usuario</a></li>
+
+                                                    <li><a class="dropdown-item" 
+                                                           sec:authorize="hasRole('PROVEEDOR')" th:href="@{/servicio/listar}" >
+                                                            Servicios</a></li>
+                                                    <li><a class="dropdown-item" 
+                                                           sec:authorize="hasRole('PROVEEDOR')" th:href="@{/servicio/registrar}" >
+                                                            Agregar Servicio</a></li>
+
+                                                    <li><a class="dropdown-item" 
+                                                           sec:authorize="hasRole('CLIENTE')" th:href="@{/contrato/listar/cliente}" >
+                                                            Contratos</a></li>
+
+
+                                                    <li><a class="dropdown-item" 
+                                                           href="/logout" >
+                                                            Cerrar Sesión
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item dropdown" >
+                                                <a class="page-scroll" th:href="@{/}" th:if="${session.usuarioSession != null}">
+                                                    <i class="fa-solid fa-bell"></i>
+                                                </a>  
+                                            </li>
+                                        </ul> 
+                                    </div>
+                                </nav>
+                                <!-- fin navbar -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- container -->
+                </div>
+            </header>
+            <!-- imagen de fondo -->
+            <div
+                class="hero-section hero-style img-bg"
+                style="background-image: url('../static/img/hero-bg.svg')"
+                >
+                <div class="container">
+                    <div class="row">
+                        <div class="card my-5 border-0">
+                            <h3 class="text-center mt-3 fw-bold">Login</h3>
+                            <form class="mt-5 p-3" >
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-4">
+                                    <div>
+                                        <div>
+                                            <label for="inputNombre" class="form-label"
+                                                   >Apellido y Nombre</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="nombre"
+                                                placeholder="Ingrese Apellido y Nombre"
+                                                name="nombre"
+                                                />
+                                        </div>
+
+                                        <div>
+                                            <label for="inputPassword" class="form-label"
+                                                   >Contraseña</label
+                                            >
+                                            <input
+                                                type="password"
+                                                class="form-control"
+                                                placeholder="Ingrese Contraseña"
+                                                id="password"
+                                                name="password"
+                                                />
+                                        </div>
+                                                                                <div>
+                                            <label for="inputPassword" class="form-label"
+                                                   >Contraseña</label
+                                            >
+                                            <input
+                                                type="password"
+                                                class="form-control"
+                                                placeholder="Ingrese Contraseña"
+                                                id="password2"
+                                                name="passwowrd2"
+                                                />
+                                        </div>
+                                        <div>
+                                            <label for="inputAddress" class="form-label"
+                                                   >Ubicacion</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="ubicacion"
+                                                placeholder="Ingrese Ubicacion"
+                                                name="ubicacion"
+                                                />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <label for="inputNombreUsuario" class="form-label"
+                                                   >Nombre de Usuario</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="accUsuario"
+                                                placeholder="Ingrese Nombre Usuario"
+                                                name="accUsuario"
+                                                />
+                                        </div>
+                                        <div>
+                                            <label for="inputEmail4" class="form-label">Email</label>
+                                            <input
+                                                type="email"
+                                                class="form-control"
+                                                id="email"
+                                                placeholder="Ingrese Email"
+                                                name="amail"
+                                                />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-primary envioButton" onclick="servic()">Soy Proveedor</button>
+                                    </div>
+                                    <div class="col-md-6"  id="foto" hidden>
+                                        <label for="inputFoto" class="form-label" >Ingrese foto</label>
+                                        <input type="file" class="form-control" id="inputFoto" disabled/>
+                                    </div>
+                                    <div id="proveedor" hidden>
+                                        <label for="inputState" class="form-label">Servicio</label>
+                                        <select id="selectServicio" class="form-select" name="servicios" disabled>
+                                            <option>Gasista</option>
+                                            <option>Plomero</option>
+                                            <option>Electricista</option>
+                                            <option>Cerrajeria</option>
+                                        </select>
+                                    </div>
+                                    <div id="contacto" >
+                                        <div>
+                                            <label for="inputContacto" class="form-label"
+                                                   >Contacto</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="inputContacto"
+                                                placeholder="Ingrese celular/tel"
+                                                name="nombreContacto"
+                                                disabled
+                                                />
+                                        </div>
+                                    </div>
+                                    <div id="descripcion">
+                                        <div>
+                                            <label for="inputDescripcion" class="form-label"
+                                                   >Descripcion Servicio</label
+                                            >
+                                            <textarea
+                                                class="form-control"
+                                                id="inputDescripcion"
+                                                placeholder="Ingrese Descripcion"
+                                                name="descripcion"
+                                                rows="5"
+                                                disabled
+                                                ></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <button type="submit" class="btn btn-primary ">Enviar</button>
+                                    </div>
+                                    <div class="col-md-4">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- footer -->
+
+      <footer th:replace="~{/fragments/footer.html :: footer}"></footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

@@ -1,0 +1,124 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<title>servicio</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+		/>
+		<link rel="stylesheet" href="/css/style.css" />
+		<link rel="stylesheet" href="/css/login.css" />
+	</head>
+	<body>
+		<section id="home" class="hero-section">
+			<div
+				class="hero-section hero-style img-bg vh-100"
+				style="background-image: url('/img/hero-bg.svg')"
+			>
+				<!-- mensaje de exito y error -->
+				<!-- <div class="row">
+					<div
+						th:if="${error != null}"
+						class="card text-white bg-danger mb-3 mensajeError"
+					>
+						<div class="card-body">
+							<h5 class="card-title">Error!</h5>
+							<p class="card-text" th:text="${error}"></p>
+						</div>
+					</div>
+					<div
+						th:if="${exito != null}"
+						class="card text-white bg-success mb-3 mt-3 mensajeExito"
+					>
+						<div class="card-body">
+							<h5 class="card-title">Exito!</h5>
+							<p class="card-text" th:text="${exito}"></p>
+						</div>
+					</div>
+				</div> -->
+				<div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="col-md-6">
+							<div class="card border-0 p-4 card-login mb-2">
+								<a
+									class="col-md-12 d-flex justify-content-center pb-3"
+									href="index.html"
+								>
+									<img src="img/logo2.png" alt="Logo" />
+								</a>
+								<h3 class="text-center fw-bold text-center">Formulario</h3>
+								<form class="p-3">
+									<div class="mb-3">
+										<label for="ejemploInput" class="form-label"
+											>input</label
+										>
+										<input
+											type="email"
+											class="form-control"
+											id="ejemploInput"
+											aria-describedby="emailHelp"
+											name="input"
+										/>
+										
+									</div>
+                                                                    <div class="mb-3">
+										<label for="ejemploInput2" class="form-label"
+											>input 2</label
+										>
+										<input
+											type="email"
+											class="form-control"
+											id="ejemploInput2"
+											aria-describedby="emailHelp"
+											name="input2"
+										/>
+										
+									</div>
+									
+									<div class="text-center mt-5">
+										<button type="submit" class="btn btn-primary">Registrar</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 d-flex justify-content-center">
+							<span class="fw-bolder">Si no te has registrado aun </span
+							><a
+								class="link-primary fw-bolder mx-1"
+								href="eleccion-usuario.html"
+							>
+								registrate!</a
+							>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 d-flex justify-content-end mb-2">
+							<a class="btn btn-dark" href="index.html">volver</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

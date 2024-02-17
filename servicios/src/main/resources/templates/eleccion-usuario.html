@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	<head>
+		<meta charset="utf-8" />
+                <title>Registrarse · ReparApp</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+            />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+            />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
+    <body>
+        <section id="home" class="hero-section">
+            <!--header -->
+            <header class="header">
+                <div class="navbar-area sticky"><!-- sticky prueba barra fijada  -->
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-12">
+                                <!-- navbar -->
+                                <nav th:replace="~{/fragments/nav.html :: nav}"></nav>           
+
+                                <!-- fin navbar -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+
+            <div
+                class="hero-section hero-style"            
+                >  <!-- container -->
+
+                <div class="container">
+                    <div class="row d-flex justify-content-center mt-5">
+                        <div class="col-md-8">
+                            <div class=" p-4 my-5">
+                                <h4 class="text-center">¿Como deseas registrarte?</h4>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="/registrar/proveedor">
+                                            <div
+                                                class="card border-0 my-5 mx-2 text-center d-flex card-effect"
+                                                >
+                                                <img
+                                                    src="/img/worker-icon.svg"
+                                                    alt=""
+                                                    class="px-5 py-3 image-icon-user align-self-center"
+                                                    />
+                                                <h6 class="pb-3">Profesional</h6>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="/registrar/cliente">
+                                            <div
+                                                class="card border-0 my-5 mx-2 text-center d-flex card-effect"
+                                                >
+                                                <img
+                                                    src="/img/user-icon.svg"
+                                                    alt=""
+                                                    class="px-5 py-3 align-self-center image-icon-user"
+                                                    />
+                                                <h6 class="pb-3">Cliente</h6>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <span class="fw-bolder"
+                                  >Si ya tenes un usuario ingresa desde </span
+                            ><a class="link-primary fw-bolder mx-1" href="/login">
+                                aquí</a
+                            >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-end mb-2">
+                            <a class="btn btn-dark" href="/">Volver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+         <footer th:replace="~{/fragments/footer.html :: footer}"></footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

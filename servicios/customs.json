@@ -1,0 +1,13 @@
+{
+    "elements": {},
+    "attributes": {
+        "th:text": {},
+        "th:if": {},
+        "th:src": {
+            "context": "img"
+        },
+        "th:each": {
+            "context": "div"
+        }
+    }
+}

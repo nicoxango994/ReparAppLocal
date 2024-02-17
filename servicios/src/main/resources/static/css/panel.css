@@ -1,0 +1,11 @@
+/** @format */
+
+.boton:hover {
+	background-color: rgba(50, 52, 80, 0.9) !important;
+	color: #fff;
+}
+
+.boton {
+	background-color: #323450 !important;
+	color: #fff;
+}

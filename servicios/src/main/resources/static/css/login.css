@@ -1,0 +1,57 @@
+/** @format */
+
+label{
+    font-size: 14px !important;
+}
+.card-login {
+	border-radius: 30px !important;
+	
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.3) 0%,
+		rgba(170, 219, 254, 0.6) 100%
+	);
+
+}
+
+.contenedor-login{
+    margin-top: 100px;
+}
+
+/* 
+.card-login input {
+	border: 1px solid rgba(108, 168, 236, 0.603);
+} */
+
+.hero-section .hero-style {
+	padding: 20px 0 0;
+}
+.hero-section {
+	height: 100%;
+}
+
+.image-icon-user {
+	width: 250px;
+	
+}
+.card-effect {
+	background-color: rgba(179, 209, 250, 0.8);
+}
+.card-effect:hover {
+	box-shadow: 2px 2px 2px 2px #a5a5a5;
+}
+.hero-section {
+	height: 100%;
+}
+
+.hero-section {
+	overflow: visible;
+}
+
+label{
+    margin-bottom: 0!important;
+}
+input , select{
+    height:35px;
+    background-color: rgba(255,255,255,0.7);
+}

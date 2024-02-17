@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Inicio</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+            />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+            />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/servicio-cards.css">
+    </head>
+    <body>
+
+        <div class="notification-icon" onclick="toggleNotifications()">
+            <i class="fa-solid fa-bell"></i>
+            <span class="badge"></span> <!-- Aquí podrías mostrar el número de notificaciones pendientes -->
+        </div>
+
+        <div  class="" id="notificationMenu">       
+            <div class="">
+                    <div class="">
+                        <div class="col-lg-6 col-md-12">
+                            <div class="card" th:each="oferta : ${ofertas}">
+                                <h5 class="card-header" ></h5>
+                                <div class="card-body">
+                                    <h5 class="card-title" th:text="${oferta.cliente.nombre}"></h5>
+                                    <p class="card-text"  th:text="${oferta.descripcion}"></p>
+                                    <a href="/aceptar" class="btn btn-primary">ACEPTAR</a>
+                                    <a href="#" class="btn btn-primary">RECHAZAR</a>
+                                    <a href="#" class="btn btn-primary">ELIMINAR</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+
+        <script>
+
+            let notificationCount = 0;
+
+            function toggleNotifications() {
+                var menu = document.getElementById("notificationMenu");
+                if (menu.style.display === "none" || menu.style.display === "") {
+                    menu.style.display = "block";
+                } else {
+                    menu.style.display = "none";
+                }
+            }
+        </script>
+
+    </body>
+</html>

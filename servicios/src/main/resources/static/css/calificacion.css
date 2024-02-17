@@ -1,0 +1,32 @@
+.img-profesional {
+	width: 120px;
+	height: 120px;
+	border-radius: 100%;
+}
+.calificacion-estrellas {
+	transform: rotateY(180deg);
+}
+
+.calificacion-estrellas > input {
+	display: none;
+}
+.calificacion-estrellas label {
+	display: inline-block;
+	color: #aaa;
+	font-size: 25px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.calificacion-estrellas > label:not(:last:child) {
+	margin-right: 5px;
+}
+
+.calificacion-estrellas > input:checked ~ label,
+.calificacion-estrellas > input:hover ~ label {
+	color: gold;
+}
+
+.titulo-calificacion {
+	color: #323450 !important;
+}

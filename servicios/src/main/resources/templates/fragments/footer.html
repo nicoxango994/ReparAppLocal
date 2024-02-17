@@ -1,0 +1,87 @@
+<footer class="footer footer-style">
+                    <div class="container">
+                        <div class="widget-wrapper">
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                    <div class="footer-widget">
+                                        <div class="logo">
+                                            <a class="navbar-brand" href="index.html">
+                                                <img src="/img/logo2.png" alt="Logo" />
+                                            </a>
+                                        </div>
+                                        <p class="desc">Visita nuestras redes sociales</p>
+                                        <ul class="socials">
+                                            <li>
+                                                <a  href="https://www.instagram.com/" target="_blank">
+                                                    <i class="bi bi-instagram"></i
+                                                    >
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.twitter.com/" target="_blank">
+                                                    <i class="bi bi-twitter-x"></i
+                                                    >
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.facebook.com/" target="_blank">
+                                                    <i class="bi bi-facebook" ></i
+                                                    >
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.whatsapp.com/" target="_blank">
+                                                    <i class="bi bi-whatsapp"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-12 col-sm-12">
+                                    <div class="footer-widget">
+                                        <h6>Enlaces</h6>
+                                        <ul class="links">
+                                            <li><a href="#home">Home</a></li>
+                                            <li><a href="#nosotros">Nosotros</a></li>
+                                            <li sec:authorize="hasRole('CLIENTE')"><a href="/servicio/listar/cliente">Servicios</a></li>
+                                            <li sec:authorize="hasRole('PROVEEDOR')"><a href="/servicio/listar">Servicios</a></li>
+                                            <li><a href="/usuario/restablecer">Perfil</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+                                    <div class="footer-widget">
+                                        <h6>Profesionales</h6>
+                                        <ul class="links">
+                                            <li><a href="#servicios">Plomeros</a></li>
+                                            <li><a href="#servicios">Gasistas</a></li>
+                                            <li><a href="#servicios">Electricistas</a></li>
+                                            <li><a href="#servicios">Cerrajeros</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-3 col-md-6">
+                                    <div class="footer-widget">
+                                        <em>Italia 5879, CP M5505 Chacras de Coria, Mendoza</em>
+                                        <div>
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13387.471245299392!2d-68.88720045495876!3d-32.980889177319455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e0af3dc0e8f1f%3A0x6b647646861df9cf!2sChacras%20de%20Coria%2C%20Mendoza!5e0!3m2!1ses-419!2sar!4v1700837705319!5m2!1ses-419!2sar"
+                                                width="270"
+                                                height="200"
+                                                style="border: 0"
+                                                allowfullscreen=""
+                                                loading="lazy"
+                                                referrerpolicy="no-referrer-when-downgrade"
+                                                ></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="copyright-wrapper">
+                            <p>
+                                <a href="/" target="_blank">Design by Equipo 8</a>
+                            </p>
+                        </div>
+                    </div>
+                </footer>
